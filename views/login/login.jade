@@ -90,23 +90,27 @@ block content
 											div.space-6
 											p Enter your details to begin:
 											form
-												fieldset
+												div.form-group
 													label.block.clearfix
 														span.block.input-icon.input-icon-right
-															input(type="email",placeholder="Email").form-control
+															input(type="email",placeholder="Email").form-control#u_email
 															i.ace-icon.fa.fa-envelope
+												div.form-group
 													label.block.clearfix
 														span.block.input-icon.input-icon-right
-															input(type="text",placeholder="Username").form-control
-															i.ace-icon.fa.fa-envelope
+															input(type="text",placeholder="Username").form-control#username
+															i.ace-icon.fa.fa-user
+												div.form-group
 													label.block.clearfix
 														span.block.input-icon.input-icon-right
-															input(type="password",placeholder="Password").form-control
-															i.ace-icon.fa.fa-envelope
+															input(type="password",placeholder="Password").form-control#password
+															i.ace-icon.fa.fa-lock
+												div.form-group
 													label.block.clearfix
 														span.block.input-icon.input-icon-right
-															input(type="password",placeholder="Repeat Password").form-control
-															i.ace-icon.fa.fa-envelope
+															input(type="password",placeholder="Repeat Password").form-control#re_password
+															i.ace-icon.fa.fa-retweet
+												div.form-group
 													label.block
 														input(type="checkbox").ace
 														span.lbl
@@ -137,4 +141,11 @@ block content
 								&nbsp;
 								a#btn-login-light(href="#") Light
 								&nbsp;&nbsp;&nbsp;
+	//- div.alert.alert-danger
+	//- 	button(type="button",data-dismiss="alert").close
+	//- 		i.ace-icon.fa.fa-times
+	//- 	strong
+	//- 		i.ace-icon.fa.fa-times
+	//- 		| On snap
+	//- 	| Change a fe things up and try submitting again.
 	script(src="./javascripts/login/login.js")

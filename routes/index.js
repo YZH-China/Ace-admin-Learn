@@ -4,7 +4,7 @@ var jade = require('jade');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login/login', { title: 'hahah' });
+  res.render('login/login', { title: 'ace admin' });
 });
 
 module.exports = router;
