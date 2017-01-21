@@ -112,16 +112,16 @@ block content
 															i.ace-icon.fa.fa-retweet
 												div.form-group
 													label.block
-														input(type="checkbox").ace
+														input(type="checkbox").ace#reg-agreement
 														span.lbl
 															| I accept the
 															a(href="#") &nbsp; User Agreement
 													div.space-24
 													div.clearfix
-														button(type="button").width-30.pull-left.btn.btn-sm
+														button(type="button").width-30.pull-left.btn.btn-sm#reg-reset
 															i.ace-icon.fa.fa-refresh
 															span.bigger-110 Reset
-														button(type="button").width-65.pull-right.btn.btn-sm.btn-success
+														button(type="button").width-65.pull-right.btn.btn-sm.btn-success#btn-register
 															span.bigger-110 Register
 															i.ace-icon.fa.fa-arrow-right
 										div.toolbar.center
@@ -141,11 +141,10 @@ block content
 								&nbsp;
 								a#btn-login-light(href="#") Light
 								&nbsp;&nbsp;&nbsp;
-	//- div.alert.alert-danger
-	//- 	button(type="button",data-dismiss="alert").close
-	//- 		i.ace-icon.fa.fa-times
-	//- 	strong
-	//- 		i.ace-icon.fa.fa-times
-	//- 		| On snap
-	//- 	| Change a fe things up and try submitting again.
+				div(style={display:"none"}).row#reg-info
+					div.col-sm-10.col-sm-offset-1
+						div.login-container
+							div.alert.alert-danger
+								strong
+									i.ace-icon.fa.fa-times
 	script(src="./javascripts/login/login.js")
