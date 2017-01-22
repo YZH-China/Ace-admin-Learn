@@ -23,21 +23,23 @@ block content
 												| Please Enter Your Infomation
 											div.space-6
 											form
-												fieldset
+												div.form-group
 													label.block.clearfix
 														span.block.input-icon.input-icon-right
-															input(type="text",placeholder="Username").form-control
+															input(type="text",placeholder="Username").form-control#username-login
 															i.ace-icon.fa.fa-user
+												div.form-group
 													label.block.clearfix
 														span.block.input-icon.input-icon-right
-															input(type="text",placeholder="Passoword").form-control
+															input(type="password",placeholder="Passoword").form-control#password-login
 															i.ace-icon.fa.fa-lock
-													div.space
+												div.space
+												div.form-group
 													div.clearfix
 														label.inline
 															input(type="checkbox").ace
 															span.lbl Remember Me
-														button(type="button").width-35.pull-right.btn.btn-primary.btn-sm
+														button(type="button").width-35.pull-right.btn.btn-primary.btn-sm#btn-login
 															i.ace-icon.fa.fa-key
 															span.bigger-110 Login
 											div.social-or-login.center
@@ -118,14 +120,14 @@ block content
 															a(href="#") &nbsp; User Agreement
 													div.space-24
 													div.clearfix
-														button(type="button").width-30.pull-left.btn.btn-sm#reg-reset
+														button(type="button",data-target="#modal-success",data-toggle="modal").width-30.pull-left.btn.btn-sm#reg-reset
 															i.ace-icon.fa.fa-refresh
 															span.bigger-110 Reset
 														button(type="button").width-65.pull-right.btn.btn-sm.btn-success#btn-register
 															span.bigger-110 Register
 															i.ace-icon.fa.fa-arrow-right
 										div.toolbar.center
-											a(href="#",data-target="#login-box").back-to-login-link
+											a(href="#",data-target="#login-box").back-to-login-link#reg-to-log
 												i.ace-icon.fa.fa-arrow-left
 												| &nbsp; Back to login
 							div.navbar-fixed-top.align-right
@@ -147,4 +149,6 @@ block content
 							div.alert.alert-danger
 								strong
 									i.ace-icon.fa.fa-times
+		block modail
+			include ../success.jade
 	script(src="./javascripts/login/login.js")

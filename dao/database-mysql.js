@@ -9,20 +9,27 @@ var pool = mysql.createPool({
 
 var QueryMethod = {
 	//普通查询
-	query:function(sql, callback){
+	query:function(sql, values, callback){
 		pool.getConnection(function(err, connection){
 			if(err){
-				callback(err, null, null);
+				console.error(err);
+				return;
 			} else {
-				connection.query(sql, function(qerr, values, fields){
+				connection.query(sql, values, function(qerr, results){
 					//释放连接
 					connection.release();
-					//事件驱动回调
-					callback(qerr, values, fields);
+					if(qerr){
+						console.error(qerr);
+						return;
+					} else {
+						callback(results);
+					}
+					
 				})
 			}
 		})
 	}
+
 };
 
 module.exports = QueryMethod;
