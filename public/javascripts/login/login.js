@@ -38,17 +38,7 @@ jQuery(function($){
 					data:{username:username_login, password:password_login},
 					success:function(data){
 						if(data){
-							showHasSuccess($("#username-login"));
-							slideUp($("#reg-info"));
-							$.ajax({
-								type:'get',
-								url:"/home/index",
-								data:{username:username_login},
-								success:function(data){
-									// window.location.href = "http://127.0.0.1:3000/home";
-									console.log(data);
-								}
-							})
+							location.href = location.origin + `/home/index?username=${username_login}`;
 						} else {
 							showHasError($("#password-login"));
 							slideDown($("#reg-info"), "错误！ &nbsp; 用户名和密码不匹配！");
@@ -242,7 +232,16 @@ jQuery(function($){
 	$("#reg-to-log").on('click', function(e){
 		resetButton();
 	})
-
+	//facebook连接
+	$("#facebook").on('click', function(e){
+		$.ajax({
+			url:"/home/test?username=123123",
+			type:"get",
+			success:function(data){
+				console.log(data);
+			}
+		})
+	})
 	/*
 	* --====改变背景样式dark、blur、light====--
 	 */

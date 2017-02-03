@@ -13,6 +13,13 @@ var home = require('./routes/home');
 
 var app = express();
 
+//处理url
+/*app.use(function(req, res, next){
+	console.log(decodeURI(req.url));
+	req.url = decodeURI(req.url);
+	next();
+})*/
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

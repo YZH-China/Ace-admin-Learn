@@ -28,6 +28,17 @@ var QueryMethod = {
 				})
 			}
 		})
+	},
+
+	//对象转化成每个键值对为一项的对象数组
+	objectToArray:function(obj){
+		var arr = [];
+		for(var keys in obj){
+			var empty = {};
+			empty[keys] = obj[keys];
+			arr.push(empty);
+		}
+		return arr;
 	}
 
 };
